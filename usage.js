@@ -51,7 +51,7 @@ const attributes = (decleration) => {
 }
 
 const events = (decleration) => {
-    const exampleEvent = decleration?.events.find((m) => m.name !== undefined);
+    const exampleEvent = decleration?.events?.find((m) => m.name !== undefined);
     if (!exampleEvent) return '';
 
     console.log('[cem-plugin-docsify] Found Events')
@@ -67,7 +67,7 @@ Events are sent as a [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/
 }
 
 const cssTheme = (decleration) => {
-    const exampleCSS = decleration?.cssProperties.find((m) => m.name !== undefined);
+    const exampleCSS = decleration?.cssProperties?.find((m) => m.name !== undefined);
     if (!exampleCSS) return '';
     
     console.log('[cem-plugin-docsify] Found CSS')
@@ -82,7 +82,7 @@ ${decleration.tagName} {
 }
 
 const classes = (decleration) => {
-    const exampleClass = decleration?.cssParts.find((m) => m.name !== undefined);
+    const exampleClass = decleration?.cssParts?.find((m) => m.name !== undefined);
     if (!exampleClass) return '';
     
     console.log('[cem-plugin-docsify] Found Classes')
