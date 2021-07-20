@@ -3,13 +3,24 @@ import ts from 'typescript';
 import { create } from '@custom-elements-manifest/analyzer/src/create.js';
 import myPlugin from './index.js';
 
-const code = fs.readFileSync('fixtures/default/sourcecode/default.js').toString();
+const myCustomElement = fs.readFileSync('fixtures/default/sourcecode/default.js').toString();
+const myCustomEvents = fs.readFileSync('fixtures/default/sourcecode/events.js').toString();
 
-const modules = [ts.createSourceFile(
-  'my-element.js',
-  code,
-  ts.ScriptTarget.ES2015,
-  true,
-)];
+const modules = [
+  ts.createSourceFile(
+    'my-element.js',
+    myCustomElement,
+    ts.ScriptTarget.ES2015,
+    true,
+  ),
+  ts.createSourceFile(
+    'events.js',
+    myCustomEvents,
+    ts.ScriptTarget.ES2015,
+    true,
+  ),
+];
 
-console.log(JSON.stringify(create({modules, plugins: [myPlugin()]}), null, 2));
+create({modules, plugins: [myPlugin()]});
+
+// console.log(JSON.stringify();

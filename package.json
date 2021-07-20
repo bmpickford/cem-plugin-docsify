@@ -1,12 +1,13 @@
 {
-  "name": "cem-plugin-template",
+  "name": "@bmpickford/cem-plugin-docsify-gen",
   "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "nodemon dev.js",
-    "test": "uvu test"
+    "test": "uvu test",
+    "docs:serve": "wds --root-dir=docs --node-resolve --watch"
   },
   "keywords": [
     "custom-elements",
@@ -24,6 +25,7 @@
     "globby": "^11.0.3",
     "nodemon": "^2.0.7",
     "typescript": "^4.3.2",
-    "uvu": "^0.5.1"
-  }
+    "uvu": "^0.5.1",
+    "@web/dev-server": "^0.1.18"
+  },
 }
