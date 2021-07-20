@@ -1,6 +1,6 @@
 {
   "name": "@bmpickford/cem-plugin-docsify-gen",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -22,10 +22,10 @@
   "license": "ISC",
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.1.14",
+    "@web/dev-server": "^0.1.18",
     "globby": "^11.0.3",
     "nodemon": "^2.0.7",
     "typescript": "^4.3.2",
-    "uvu": "^0.5.1",
-    "@web/dev-server": "^0.1.18"
-  },
+    "uvu": "^0.5.1"
+  }
 }
