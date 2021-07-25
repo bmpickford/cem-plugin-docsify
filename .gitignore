@@ -3,3 +3,4 @@ node_modules/
 docs/
 .npmrc
 dist/
+dist__test/

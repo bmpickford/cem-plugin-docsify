@@ -1,18 +1,22 @@
 {
-  "name": "@bmpickford/cem-plugin-docsify-gen",
+  "name": "@bmpickford/cem-plugin-docsify",
   "version": "0.1.0",
-  "description": "",
+  "description": "A custom-elements-manifest plugin that generates a docsify site for your element",
+  "license": "MIT",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
     "build": "rimraf dist && tsc && cp -r src/templates/ ./dist",
-    "start": "yarn build && nodemon dev.js --ext \"ts,js,json\"",
-    "test": "uvu -r ts-node/register test",
+    "build:test": "tsc -p tsconfig.test.json",
+    "start": "yarn build && nodemon dev.js --ext \"ts,js,json\" & yarn docs:serve",
+    "test": "rimraf dist__test && yarn build:test && yarn test:run",
+    "test:run": "node --experimental-json-modules ./node_modules/.bin/uvu dist__test/test",
     "test:watch": "watchlist src test -- yarn test",
-    "docs:serve": "wds --root-dir=docs --node-resolve --watch",
-    "test:jest": "jest"
+    "docs:serve": "wds --root-dir=docs --node-resolve --watch"
   },
   "keywords": [
     "custom-elements",
@@ -21,13 +25,12 @@
     "customelements",
     "webcomponents",
     "customelementsjson",
-    "customelementsmanifest"
+    "customelementsmanifest",
+    "docsify"
   ],
   "author": "Benjamin Pickford",
-  "license": "ISC",
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.1.14",
-    "@types/jest": "^26.0.24",
     "@types/mustache": "^4.1.2",
     "@web/dev-server": "^0.1.18",
     "custom-elements-manifest": "^1.0.0",
@@ -40,13 +43,15 @@
     "uvu": "^0.5.1",
     "watchlist": "^0.2.3"
   },
+  "dependencies": {
+    "mustache": "^4.2.0"
+  },
+  "homepage": "https://github.com/bmpickford/cem-plugin-docsify#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmpickford/cem-plugin-doc-gen.git"
+    "url": "git+https://github.com/bmpickford/cem-plugin-docsify.git"
   },
-  "dependencies": {
-    "jest": "^27.0.6",
-    "mustache": "^4.2.0",
-    "ts-jest": "^27.0.4"
+  "bugs": {
+    "url": "https://github.com/bmpickford/cem-plugin-docsify/issues"
   }
 }
