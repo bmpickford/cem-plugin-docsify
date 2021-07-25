@@ -14,7 +14,7 @@
 
 > A custom-elements-manifest plugin that generates a docsify site for your element
 
-### [Demo](https://github.com/bmpickford/cem-plugin-docsify#readme)
+### [Demo](https://bmpickford.github.io/cem-plugin-docsify)
 
 ## Install
 
