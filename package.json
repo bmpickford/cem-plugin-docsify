@@ -1,6 +1,6 @@
 {
   "name": "@bmpickford/cem-plugin-docsify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A custom-elements-manifest plugin that generates a docsify site for your element",
   "license": "MIT",
   "type": "module",
