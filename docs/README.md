@@ -1,4 +1,4 @@
-# my-element
+# `my-element`
 
 ## Installation
 #### NPM
@@ -6,7 +6,7 @@
 yarn add -D my-element
 ```
 
-### CND
+#### CDN
 ```bash
 <script type="module" src="https://unpkg.com/my-element?module"></script>
 ```

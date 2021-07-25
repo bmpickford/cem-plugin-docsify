@@ -21,6 +21,4 @@ const modules = [
   ),
 ];
 
-create({modules, plugins: [docsify({ name: 'myplugin', repoURL: 'https://github.com/bmpickford/cem-plugin-docsify' })]});
-
-// console.log(JSON.stringify();
+create({modules, plugins: [docsify({ name: 'My Great Element', repoURL: 'https://github.com/bmpickford/cem-plugin-docsify' })]});

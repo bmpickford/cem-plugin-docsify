@@ -3,15 +3,15 @@
 # Attributes
 |Name|Description|Default|Type|
 |--|--|--|--|
-|disabled|- disables the element|``|`boolean`|
-|foo|- description for foo|``|`string`|
+|disabled|disables the element|`undefined`|`boolean`|
+|foo|description for foo|`undefined`|`string`|
 
 # Events
 |Name|Description|Type|
 |--|--|--|
-|custom-event|- some description for custom-event|``|
-|typed-event|- some description for typed-event|`Event`|
-|typed-custom-event|- some description for typed-custom-event|`MyCustomEvent`|
+|custom-event|some description for custom-event|``|
+|typed-event|some description for typed-event|`Event`|
+|typed-custom-event|some description for typed-custom-event|`MyCustomEvent`|
 
 # Slots
 |Name|Description|
@@ -23,4 +23,4 @@
 # CSS Parts
 |Name|Description|
 |--|--|
-|bar|- Styles the color of bar|
+|bar|Styles the color of bar|

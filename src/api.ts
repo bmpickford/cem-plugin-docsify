@@ -26,7 +26,21 @@ export class CustomElementAPIDoc extends APIDoc<schema.CustomElement> {
     }
 
     protected getData(): schema.CustomElement {
-        return this.decleration;
+        return this.addUndefinedDefaultString(this.decleration);
     }
 
+    private addUndefinedDefaultString(decleration: schema.CustomElementDeclaration): schema.CustomElementDeclaration {
+        const data = Object.entries(this.decleration).map(([key, val]) => {
+            if (!Array.isArray(val)) return [key, val]
+            
+            return [
+                key,
+                val.map((v) => {
+                    if (!v.default) return { ...v, default: 'undefined' };
+                    return v;
+                }),
+            ];
+        });
+        return Object.fromEntries(data);
+    }
 }
