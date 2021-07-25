@@ -3,6 +3,9 @@
   "version": "0.0.3",
   "description": "",
   "type": "module",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc && cp -r src/templates/ ./dist",
     "start": "yarn build && nodemon dev.js --ext \"ts,js,json\"",
