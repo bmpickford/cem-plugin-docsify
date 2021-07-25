@@ -14,7 +14,7 @@
 
 > A custom-elements-manifest plugin that generates a docsify site for your element
 
-### 🏠 [Homepage](https://github.com/bmpickford/cem-plugin-docsify#readme)
+### [Demo](https://github.com/bmpickford/cem-plugin-docsify#readme)
 
 ## Install
 
@@ -26,7 +26,7 @@ yarn add @bmpickford/cem-plugin-docsify
 
 ```javascript
 // file: custom-elements-manifest.config.mjs
-import docsify from '@bmpickford/cem-plugin-docsify-gen';
+import docsify from '@bmpickford/cem-plugin-docsify';
 
 export default {
   plugins: [
@@ -53,16 +53,9 @@ yarn start
 yarn run test
 ```
 
-## Author
-
-👤 **Benjamin Pickford**
-
-* Website: https://benpickford.me/
-* Github: [@bmpickford](https://github.com/bmpickford)
-
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bmpickford/cem-plugin-docsify/issues). You can also take a look at the [contributing guide](https://github.com/bmpickford/cem-plugin-docsify/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bmpickford/cem-plugin-docsify/issues)
 
 ## Show your support
 

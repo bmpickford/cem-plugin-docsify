@@ -1,6 +1,5 @@
 node_modules/
 .DS_Store
-docs/
 .npmrc
 dist/
 dist__test/
