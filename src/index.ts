@@ -37,7 +37,7 @@ const plugin = ({ name, repoURL, out = 'docs/', includeStorybook = false}: Plugi
 
             // Doscsify index
             const indexTemplate = fs.readFileSync(`${__distDir}/templates/index.html.mustache`, 'utf8');
-            const index = Mustache.render(indexTemplate, { name, repoURL });
+            const index = Mustache.render(indexTemplate, { name, repoURL, description: '' });
 
             
             // Sidebar

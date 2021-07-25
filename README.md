@@ -1,13 +1,13 @@
 <h1 align="center">Welcome to @bmpickford/cem-plugin-docsify 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.3-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/bmpickford/cem-plugin-docsify#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="https://github.com/bmpickford/cem-plugin-docsify/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/bmpickford/cem-plugin-docsify/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/bmpickford/cem-plugin-docsify/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/bmpickford/@bmpickford/cem-plugin-docsify" />
   </a>
 </p>
