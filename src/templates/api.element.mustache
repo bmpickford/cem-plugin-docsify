@@ -1,0 +1,46 @@
+#
+
+{{#attributes.length}}
+# Attributes
+|Name|Description|Default|Type|
+|--|--|--|--|
+{{#attributes}}
+|{{name}}|{{description}}|`{{default}}`|`{{type.text}}`|
+{{/attributes}}
+{{/attributes.length}}
+
+{{#events.length}}
+# Events
+|Name|Description|Type|
+|--|--|--|
+{{#events}}
+|{{name}}|{{description}}|`{{type.text}}`|
+{{/events}}
+{{/events.length}}
+
+{{#slots.length}}
+# Slots
+|Name|Description|
+|--|--|
+{{#slots}}
+|{{name}}|{{description}}|
+{{/slots}}
+{{/slots.length}}
+
+{{#cssProps.length}}
+# CSS Properties
+|Name|Description|Default|
+|--|--|--|
+{{#cssProps}}
+|{{name}}|{{description}}|`{{default}}`|
+{{/cssProps}}
+{{/cssProps.length}}
+
+{{#cssParts.length}}
+# CSS Parts
+|Name|Description|
+|--|--|
+{{#cssParts}}
+|{{name}}|{{description}}|
+{{/cssParts}}
+{{/cssParts.length}}

@@ -1,4 +1,4 @@
-const GetDocsifySource = (name, repo) => `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,8 +12,8 @@ const GetDocsifySource = (name, repo) => `<!DOCTYPE html>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '${name}',
-      repo: '${repo}',
+      name: '{{name}}',
+      repo: '{{repoURL}}',
       loadSidebar: true,
       subMaxLevel: 2,
     }
@@ -21,6 +21,4 @@ const GetDocsifySource = (name, repo) => `<!DOCTYPE html>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
-</html>`;
-
-export default GetDocsifySource;
+</html>
