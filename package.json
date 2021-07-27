@@ -1,11 +1,11 @@
 {
-  "name": "@bmpickford/cem-plugin-docsify",
-  "version": "0.1.3",
+  "name": "cem-plugin-docsify",
+  "version": "0.2.0",
   "description": "A custom-elements-manifest plugin that generates a docsify site for your element",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "dist/"
   ],
@@ -16,7 +16,8 @@
     "test": "rimraf dist__test && yarn build:test && yarn test:run",
     "test:run": "node --experimental-json-modules ./node_modules/.bin/uvu dist__test/test",
     "test:watch": "watchlist src test -- yarn test",
-    "docs:serve": "wds --root-dir=docs --node-resolve --watch"
+    "docs:serve": "wds --root-dir=docs --node-resolve --watch",
+    "postbuild": "sh ./scripts/prepare.sh"
   },
   "keywords": [
     "custom-elements",
