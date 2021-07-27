@@ -1,6 +1,6 @@
 {
   "name": "cem-plugin-docsify",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "A custom-elements-manifest plugin that generates a docsify site for your element",
   "license": "MIT",
   "type": "module",
