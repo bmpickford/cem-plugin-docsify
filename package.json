@@ -1,6 +1,6 @@
 {
   "name": "cem-plugin-docsify",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A custom-elements-manifest plugin that generates a docsify site for your element",
   "license": "MIT",
   "type": "module",
@@ -18,7 +18,7 @@
     "test:watch": "watchlist src test -- yarn test",
     "docs:serve": "wds --root-dir=docs --node-resolve --watch",
     "postbuild": "sh ./scripts/prepare.sh",
-    "publish": "yarn test && yarn build && yarn version --interactive && cd dist/"
+    "publish": "yarn test && yarn build && yarn version --interactive && cd dist/ && npm publish"
   },
   "keywords": [
     "custom-elements",
