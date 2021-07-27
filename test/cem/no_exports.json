@@ -60,24 +60,7 @@
             "customElement": true
           }
         ],
-        "exports": [
-          {
-            "kind": "js",
-            "name": "MyElement",
-            "declaration": {
-              "name": "MyElement",
-              "module": "src/MyElement.ts"
-            }
-          },
-          {
-            "kind": "custom-element-definition",
-            "name": "my-element",
-            "declaration": {
-              "name": "MyElement",
-              "module": "src/MyElement.ts"
-            }
-          }
-        ]
+        "exports": []
       }
     ]
   }

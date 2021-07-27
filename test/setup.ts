@@ -1,7 +1,7 @@
 import fs from 'fs';
 import ts from 'typescript';
+// @ts-ignore
 import { create } from '@custom-elements-manifest/analyzer/src/create.js';
-import docsify from './dist/index.js';
 
 const myCustomElement = fs.readFileSync('fixtures/default/sourcecode/default.js').toString();
 const myCustomEvents = fs.readFileSync('fixtures/default/sourcecode/events.js').toString();
@@ -21,15 +21,7 @@ const modules = [
   ),
 ];
 
-create({
+export const manifest = create({
   modules,
   dev: true,
-  plugins: [
-    docsify({
-      name: 'My Great Element',
-      repoURL: 'https://github.com/bmpickford/cem-plugin-docsify',
-      includeStorybook: true,
-      storybookHeight: 2000,
-    })
-  ]
 });

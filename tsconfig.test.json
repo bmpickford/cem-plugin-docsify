@@ -8,9 +8,10 @@
         "sourceMap": false,
         "inlineSources": false,
         "declaration": false,
+        "allowJs": true,
     },
     "include": [
-        "test/**/*test.ts",
+        "test/**/*.ts",
         "src/**/*.ts",
     ],
 }

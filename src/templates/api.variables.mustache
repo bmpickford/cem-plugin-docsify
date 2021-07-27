@@ -1,0 +1,11 @@
+## Variables
+
+{{#variables.length}}
+{{#variables}}
+#### {{name}}
+`const {{name}}{{#type}}: {{type.text}}{{/type}}{{#default}} = {{default}}{{/default}}`
+
+{{description}}
+{{summary}}
+{{/variables}}
+{{/variables.length}}

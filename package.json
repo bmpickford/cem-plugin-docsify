@@ -12,7 +12,8 @@
   "scripts": {
     "build": "rimraf dist && tsc && cp -r src/templates/ ./dist",
     "build:test": "tsc -p tsconfig.test.json",
-    "start": "yarn build && nodemon dev.js --ext \"ts,js,json\" & yarn docs:serve",
+    "start": "yarn build && node dev.js",
+    "start:watch": "yarn build && nodemon dev.js --ext \"ts,js,json\" & yarn docs:serve",
     "test": "rimraf dist__test && yarn build:test && yarn test:run",
     "test:run": "node --experimental-json-modules ./node_modules/.bin/uvu dist__test/test",
     "test:watch": "watchlist src test -- yarn test",
@@ -31,7 +32,6 @@
   ],
   "author": "Benjamin Pickford",
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.1.14",
     "@types/mustache": "^4.1.2",
     "@web/dev-server": "^0.1.18",
     "custom-elements-manifest": "^1.0.0",
@@ -45,6 +45,7 @@
     "watchlist": "^0.2.3"
   },
   "dependencies": {
+    "@custom-elements-manifest/analyzer": "^0.1.14",
     "mustache": "^4.2.0"
   },
   "homepage": "https://github.com/bmpickford/cem-plugin-docsify#readme",

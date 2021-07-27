@@ -7,6 +7,13 @@
   <meta name="description" content="{{description}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  {{#includeStorybook}}
+  <style>
+    #main iframe {
+      border: none;
+    }
+  </style>
+  {{/includeStorybook}}
 </head>
 <body>
   <div id="app"></div>
@@ -17,6 +24,15 @@
       loadSidebar: true,
       subMaxLevel: 2,
     }
+    {{#includeStorybook}}
+
+      const iframe = document.querySelector('#main iframe');
+      if (iframe) {
+        iframe.width  = iframe.contentWindow.document.body.scrollWidth;
+        iframe.height = iframe.contentWindow.document.body.scrollHeight;
+      }
+
+    {{/includeStorybook}}
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>

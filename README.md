@@ -1,12 +1,6 @@
-<h1 align="center">Welcome to cem-plugin-docsify 👋</h1>
+<h1 align="center">🔌 cem-plugin-docsify 🔌</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.3-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/bmpickford/cem-plugin-docsify#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/bmpickford/cem-plugin-docsify/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
   <a href="https://github.com/bmpickford/cem-plugin-docsify/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/bmpickford/cem-plugin-docsify" />
   </a>
@@ -25,7 +19,7 @@ yarn add cem-plugin-docsify
 ## Usage
 
 ```javascript
-// file: custom-elements-manifest.config.mjs
+// custom-elements-manifest.config.mjs
 import docsify from 'cem-plugin-docsify';
 
 export default {
@@ -34,16 +28,12 @@ export default {
   ]
 }
 ```
-interface PluginProps {
-    name: string;
-    repoURL?: string;
-    out?: string;
-    includeStorybook?: boolean;
-}
 
 ## Configuration
 The plugin comes with several built in configuration options
 ```javascript
+// custom-elements-manifest.config.mjs
+
 docsify({
   // required
   // name of your docs page. This will appear at the top right 
@@ -63,7 +53,41 @@ docsify({
   // is expected that there will be a built storybook docs
   // site in the docs folder
   includeStorybook: false,
+  // optional. Default: 3000
+  // docsify doesn't give many options for customizing embedded content
+  // so the height needs to be static. Set to 3000 as a default but
+  // this is here to modify if needed
+  storybookHeight: 3000,
 }),
+```
+
+#### Usage with Storybook
+As seen in the demo, you can include your storybooks docs as an iFrame to easily provide tangible examples. To do this, you
+will need to build your storybook docs (e.g. `build-storybook --docs`) and set the output to `docs/storybook` or alternatively manually copy it across.
+Then apply this configuration to the plugin:
+
+```javascript
+// custom-elements-manifest.config.mjs
+
+docsify({
+  name: 'MyGreatCustomElementWithStorybookDocs',
+  includeStorybook: true,
+}),
+```
+
+It is also recommended to remove any navigation and panels from the storybook docs for a better user experience. This can be configured in .storybook/manager.js
+##### [Storybook Configuration Docs](https://storybook.js.org/docs/react/configure/features-and-behavior)
+
+For the demo, this was the configuration used:
+```javascript
+// .storybook/manager.js
+import { addons } from '@storybook/addons';
+
+addons.setConfig({
+  showNav: false,
+  showPanel: false,
+  isFullscreen: true,
+});
 ```
 
 ## Development

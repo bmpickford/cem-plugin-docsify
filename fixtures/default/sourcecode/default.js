@@ -25,7 +25,74 @@ import { MyCustomEvent } from './events';
  * @tagname my-element
  */
 export class MyElement extends HTMLElement {
-  ev = new MyCustomEvent();
+  constructor() {
+    new MyCustomEvent();
+  }
 }
+
+class B { }
+class A { }
+
+class S { }
+
+/**
+ * @description class with various mixins and properties
+ */
+export class MyCustomClassWithMixins extends B(A(S)) {
+  /**
+   * my string
+   * @type {string} myProperty
+   */
+  myProperty = 'some string';
+
+  /**
+   * counter
+   * @type {number} count
+   */
+  count;
+
+  constructor(prop1) {
+    this.myProperty = prop1 || 'something else';
+  }
+
+  /**
+   * Gets the current count
+   * @returns {number}
+   */
+  getCount() {
+    return this.count;
+  }
+
+  /**
+   * Sets the count
+   * @param {number} count 
+   */
+  setCount(count) {
+    this.count = count;
+  }
+}
+
+/**
+ * 
+ * @param {number} count 
+ * @returns {number}
+ * 
+ * @description Adds 1 to the count
+ */
+export function MyHelperFunction(count) {
+  return count + 1;
+}
+
+export const MyCustomElementName = 'my-element';
+
+/**
+ * @type {string} My element name, that includes JSDoc typings
+ * @const
+ */
+export const MyTypedCustomElementName = 'my-element';
+
+export const MyMixin = (base) => class extends base {
+   foo() { return 0 }
+ }
 
 customElements.define('my-element', MyElement);

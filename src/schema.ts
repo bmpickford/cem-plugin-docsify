@@ -9,6 +9,11 @@
  */
 
 /**
+ * NOTE: This is here as the published version isn't up to date yet. This can be removed
+ * once custom-elements-manifest is updated
+ */
+
+/**
  * The top-level interface of a custom elements manifest file.
  *
  * Because custom elements are JavaScript classes, describing a custom element

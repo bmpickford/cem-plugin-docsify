@@ -1,0 +1,27 @@
+## Classes
+
+{{#classes.length}}{{#classes}}
+#### {{name}}
+`class {{name}} {{#superclass}}extends {{superclass.name}}{{/superclass}}`
+{{description}}
+{{summary}}
+{{#mixins.length}}
+
+##### Mixins
+|Name|
+|--|
+{{#mixins}}
+|`{{name}}`|
+{{/mixins}}
+{{/mixins.length}}
+{{#members.length}}
+
+##### Attributes
+|Name|Kind|Description|Type|Default|
+|--|--|--|--|--|
+{{#members}}
+|{{name}}|{{kind}}|{{description}}|`{{#type.text}}{{type.text}}{{/type.text}}{{^type.text}}N/A{{/type.text}}`|`{{#default}}{{default}}{{/default}}{{^default}}N/A{{/default}}`|
+{{/members}}
+{{/members.length}}
+
+{{/classes}}{{/classes.length}}
