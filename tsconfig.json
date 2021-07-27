@@ -14,12 +14,13 @@
         "experimentalDecorators": true,
         "importHelpers": true,
         "outDir": "dist",
-        "sourceMap": true,
-        "inlineSources": true,
+        "sourceMap": false,
+        "inlineSources": false,
         "rootDirs": ["./src", "./test"],
         "declaration": true,
         "resolveJsonModule": true,
         "skipLibCheck": true,
+        "removeComments": true,
     },
     "include": [
         "src/**/*.ts"

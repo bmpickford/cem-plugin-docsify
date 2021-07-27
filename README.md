@@ -10,7 +10,6 @@
   <a href="https://github.com/bmpickford/cem-plugin-docsify/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/bmpickford/cem-plugin-docsify" />
   </a>
-  <img alt="Bundle size" src="https://img.shields.io/github/license/bmpickford/cem-plugin-docsify" />
 </p>
 
 > A custom-elements-manifest plugin that generates a docsify site for your element
