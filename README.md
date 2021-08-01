@@ -61,7 +61,7 @@ docsify({
 }),
 ```
 
-#### Usage with Storybook
+### Usage with Storybook
 As seen in the demo, you can include your storybooks docs as an iFrame to easily provide tangible examples. To do this, you
 will need to build your storybook docs (e.g. `build-storybook --docs`) and set the output to `docs/storybook` or alternatively manually copy it across.
 Then apply this configuration to the plugin:
