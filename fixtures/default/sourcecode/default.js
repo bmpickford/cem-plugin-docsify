@@ -23,6 +23,8 @@ import { MyCustomEvent } from './events';
  *
  * @tag my-element
  * @tagname my-element
+ * 
+ * @source https://github.com/bmpickford/cem-plugin-docsify
  */
 export class MyElement extends HTMLElement {
   constructor() {

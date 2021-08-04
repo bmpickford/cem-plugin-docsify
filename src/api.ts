@@ -6,19 +6,39 @@ import { dirname } from 'path';
 import { CustomElementManifest } from './customElementManifest.js';
 
 export abstract class APIDoc<T> {
+    
     public static generateAllDocs(manifest: CustomElementManifest) {
 
         const customElDoc = new CustomElementAPIDoc(manifest.getCustomElementsDeclerations()[0] as schema.CustomElementDeclaration);
-        const typeDocs: Array<APIDoc<any>> = [
-            new ClassesAPIDoc(manifest.getClassDeclerations()),
-            new FunctionsAPIDoc(manifest.getFunctionDeclerations()),
-            new MixinsAPIDoc(manifest.getMixinDeclerations()),
-            new VariablesAPIDoc(manifest.getVariableDeclerations()),
-        ];
+        return customElDoc.generate();
+        
+        // Is this needed?
+        // const typeDocs: Array<APIDoc<any>> = [
+        //     new ClassesAPIDoc(manifest.getClassDeclerations()),
+        //     new FunctionsAPIDoc(manifest.getFunctionDeclerations()),
+        //     new MixinsAPIDoc(manifest.getMixinDeclerations()),
+        //     new VariablesAPIDoc(manifest.getVariableDeclerations()),
+        // ];
 
-        return customElDoc.generate() + '\n\n' + typeDocs.reduce((prev, curr) => {
-            return prev + curr.generate();
-        }, '<hr />\n\n\n# Type Definitions\n');
+        // return customElDoc.generate() + '\n\n' + typeDocs.reduce((prev, curr) => {
+        //     return prev + curr.generate();
+        // }, '<hr />\n\n\n# Type Definitions\n');
+    }
+
+    static mapUndefinedToEmptyField(field: string, val: schema.Declaration) {
+        const data = Object.entries(val).map(([key, val]) => {
+            if (!Array.isArray(val)) return [key, val]
+            
+            return [
+                key,
+                val.map((v) => {
+                    if (field === 'type' && !v[field]) return { ...v, type: { text: 'undefined' }};
+                    if (!v[field]) return { ...v, [field]: 'undefined' };
+                    return v;
+                }),
+            ];
+        });
+        return Object.fromEntries(data);
     }
 
     constructor(
@@ -37,27 +57,16 @@ export abstract class APIDoc<T> {
 }
 
 export class CustomElementAPIDoc extends APIDoc<schema.CustomElement> {
+    
     constructor(protected decleration: schema.CustomElementDeclaration) {
         super(decleration, 'templates/api.element.mustache');
     }
 
     protected getData(): schema.CustomElement {
-        return this.addUndefinedDefaultString();
-    }
-
-    private addUndefinedDefaultString(): schema.CustomElementDeclaration {
-        const data = Object.entries(this.decleration).map(([key, val]) => {
-            if (!Array.isArray(val)) return [key, val]
-            
-            return [
-                key,
-                val.map((v) => {
-                    if (!v.default) return { ...v, default: 'undefined' };
-                    return v;
-                }),
-            ];
-        });
-        return Object.fromEntries(data);
+        return APIDoc.mapUndefinedToEmptyField(
+            'type',
+            APIDoc.mapUndefinedToEmptyField('default', this.decleration)
+        );
     }
 }
 

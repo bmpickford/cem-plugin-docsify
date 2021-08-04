@@ -60,10 +60,11 @@ const plugin = (props: PluginProps): Plugin => {
 
             // Home page
             const readmeTemplate = fs.readFileSync(`${__distDir}/templates/README.md.mustache`, 'utf8');
-            const readme = Mustache.render(readmeTemplate, { tagName: customElDecleration.tagName });
+            let readme = Mustache.render(readmeTemplate, { tagName: customElDecleration.tagName });
 
             // API
             const apidoc = APIDoc.generateAllDocs(manifest);
+            if (apidoc) readme += `\n\n${apidoc}`;
 
             // Init out dir
             if (!fs.existsSync(docsDir)){ fs.mkdirSync(docsDir) };
@@ -75,7 +76,7 @@ const plugin = (props: PluginProps): Plugin => {
                 fs.writeFileSync(`${docsDir}/examples.md`, examples, 'utf8');
             }
 
-            if (apidoc) fs.writeFileSync(`${docsDir}/api.md`, apidoc, 'utf8');
+            // if (apidoc) fs.writeFileSync(`${docsDir}/api.md`, apidoc, 'utf8');
         }
     }
 };
